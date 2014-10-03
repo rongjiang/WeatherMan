@@ -1,0 +1,19 @@
+<html>
+  <script src="myapp.js"></script>
+  <body onLoad="startApp()">
+    <form id="addCityForm">
+      City: <input type="text" name="city" size="20">
+      State: <input type="text" name="state" size="2">
+      <input type="button" value="Add City" onClick="addCity()"><br>
+      <div id="formMessage"></div>
+    </form>
+    <br>
+    <table id="resultTable" width="60%" center>
+    <tr>
+      <td><b>City</b></td>
+      <td><b>State</b></td>
+      <td><b>Current Weather</b></td>
+    </tr>
+    </table>
+  </body>
+</html>
