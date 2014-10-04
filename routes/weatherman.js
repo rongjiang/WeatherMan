@@ -6,11 +6,9 @@ exports.getWeathers = function(request, response) {
   var city;
   var state;
   if (request.method == "POST") {
-    console.log("POST body: " + JSON.stringify(request.body));
     city = request.body.city;
     state = request.body.state;
   } else {
-    console.log("GET queryString: " + JSON.stringify(request.query));
     city = request.query.city;
     state = request.query.state;
   }

@@ -15,6 +15,16 @@ var weatherman = require('./routes/weatherman');
 // title for the app
 app.set('title', 'Weather Man');
 
+// logging using middleware
+app.use(function(request, response, next) {
+  if (request.method == "POST") {
+    console.log("%s POST %s %s", request.ip, request.path, JSON.stringify(request.body));
+  } else {
+    console.log("%s GET %s %s", request.ip, request.path, JSON.stringify(request.query));
+  }
+  next();
+});
+
 // call middleware to get weather info for cities
 app.get('/getWeathers', weatherman.getWeathers);
 // support post request also
